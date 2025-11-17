@@ -1,0 +1,91 @@
+ - 쿠버네티스  
+ - aws, 애저, gcp
+
+- 두달간하면 골드 5,4 (백준)
+- alt + Enter -> 문자열 숫자로 변환
+
+
+[알고리즘 공부] 
+- 백준(메인만 취급)
+1. 문법을 모른다 -> 답봐
+2. 30분~1시간 넘기지말기 -> 블로그 or gpt or 클로드
+   - 새싹 -> class1 -> class2(알고리즘)
+
+[리눅스]
+- 레드헷(enterpise), 데비안 계열
+가상화 pc
+- 도커, virtual box, vmware
+
+1. vmware설치
+2. vmware위에 실행할 리눅스 iso파일 
+- /etc , /home , /var
+- 쉘 프로그래밍 언어 ex) cd 등
+
+
+
+[코딩 테스트 문법]
+배열 기본값 
+- 기본타입 : 0
+- 참조타입 : null
+
+
+1. 입력받는 법 2가지
+1) InputStreamReader isr = new InputStreamReader(System.in);
+: System.in(바이트 입력)을 → 문자 입력으로 변환해주는 역할.
+- 이 시점에서 isr은 byte열
+2) BufferedReader
+: 속도를 빠르게 하기 위해 입력을 버퍼링하여 한 줄씩 읽을 수 있게 해줌.
+ ex) BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+- 한줄 단위로 읽기 위해서는 BufferedReader 클래스의 객체에 연결시킬 필요가 있습니다.
+- 이 객체는 버퍼기능을 가지고 있어서 한줄 단위로 읽는다.
+3) String someValue = br.readLine();
+- br.readLine()은 입력된 한 줄을 한국어로 변환 후, 반환합니다.
+- 이런식으로 String 클래스의 someValue안에 한 줄의 문자열을 넣을 수 있습니다.
+ex) System.in (byte stream)
+        ↓
+InputStreamReader (byte → char 변환)
+        ↓
+BufferedReader (버퍼링 + readLine 지원)
+        ↓
+프로그램에서 편하게 읽음
+
+4) StringBuilder
+- 문자열을 반복해서 더할 때 String은 불변 객체라 매번 새로운 객체 생성 → 느림
+→ StringBuilder는 내부 버퍼에 추가하는 방식이라 빠르고 효율적.
+
+StringBuilder sb = new StringBuilder();
+sb.append("Hello");
+sb.append(" ");
+sb.append("World");
+System.out.println(sb.toString());    ->   Hello World
+
+2. Scanner 활용
+Scanner in = new Scanner(System.in);
+int T = in.nextInt( );
+Scanner in = new Scanner(System.in);
+String name = in.nextLine( );
+in.close(); // 입력 스트림 닫기
+
+[git]
+<github 반영 순서>
+- git add .
+- git commit -m "first commit" 
+- git push origin main
+ : origin 은 "내가 연결해둔 원격 저장소(origin)" // 원격 저장소 조회 git remote -v
+ : main 은 브랜치(branch) 이름 // 현재 브랜치 조회 git branch
+
+1) push(내 로컬(commit)을 원격 저장소(GitHub 등)로 올리는 명령)
+2) pull(원격 저장소의 변경사항을 가져와서 내 로컬에 병합)
+
+
+[알고리즘]
+1) 동적 계획법 Dynamic Programming 이라고 하고 흔히 줄여서 DP
+'어떤 주어진 문제를 작은문제로 쪼개서 풀어나감에 있어 반복되는 호출을 줄이는 방법'
+동적계획법은 두 가지 방식으로 나뉘는데 재귀(Top-Down) 방식, 반복문(Bottom-Up) 방식이 있다.
+먼저 재귀 방식은 큰 문제를 하위 문제로 쪼개어 가장 하위의 문제부터 풀어나가는 방법이다. 
+다만 다른점이 있다. 동적계획법은 "반복되는 문제는 한 번만 푼다"는 것이 추가된다. 
+즉, 쉽게 말하면 이미 풀렸던 값을 재활용한다고 생각하면 쉽다.
+재활용, 즉 이미 풀린 하위 문제를 다시 풀지 않고 재활용 하는 것을 메모이제이션(Memoization)
+
+
+
