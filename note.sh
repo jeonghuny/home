@@ -36,17 +36,33 @@
 - 특정 문자열 포함되는지 확인
  ex) str1.contains(str2);  // str1에 str2가 있는지 
 
-- 문자열을 한 글자씩 쪼개서 배열로 저장
+# 문자열을 한 글자씩 쪼개서 배열로 저장
 // split("")은 빈 문자열 기준으로 자른다는 의미
 // 특정 문자 기준으로 자르고 싶다면 " " 또는 "," 등으로 지정
 ex) String str1 = "hello";
     String[] arr = str1.split("");
+ - 문자열을 특정 구분자로 잘라서 토큰 단위로 읽는 방법
+StringTokenizer는 문자열을 특정 구분자(delimiter) 로 잘라서 토큰(token) 단위로 읽는다
 
-- 정규식을 사용해서 문자열을 치환하는 메서드 (replaceAll) String str1;  //  
+# 기본형태
+StringTokenizer st = new StringTokenizer("A B C");
+# 구분자 지정
+StringTokenizer st = new StringTokenizer("A,B,C", ",");
+# 토큰 총 개수
+st.countTokens()
+
+# 정규식을 사용해서 문자열을 치환하는 메서드 (replaceAll) String str1;  //  
 - String result = original.replaceAll("바꿀패턴", "새문자열");
  ex) str1.replaceAll(“[0-9]”,“*”) <- 숫자, *로 바꾸기
  ex) str1.replaceAll(“a|e|i|o|u”,“”); // ( str1.replaceAll("[aeiou]", "");  ← 모음, 없애기
 
+# 문자열의 특정 인덱스 문자 하나를 가져오는 함수 charAt()
+ - char c = 문자열.charAt(인덱스);
+String str = "Hello";
+
+char c1 = str.charAt(0); // 'H'
+char c2 = str.charAt(4); // 'o'
+ 
 [함수]
 - double result = Math.pow(3,2) // 9 제곱 구하기 (더블형이다)
 - double result = Math.sqrt(4) // 4 의 제곱근 == 2 (더블형이다)
@@ -67,6 +83,8 @@ ex) String str1 = "hello";
 1) 단항, 이항, 삼항 순서 (단,이,삼)
 2) 산술, 비교, 논리, 대입 연산자 순서 (산,비,논,대)
 3) 단항, 부호, 대입 제외한 모든 연산 방향 (->)
+
+
 
 
 
@@ -212,6 +230,13 @@ modified(수정된), staged(스테이징된), committed(커밋된) 상태
 
 [git commit –m “버전에 남길 메시지”] 
  ex) git commit –m “first commit”
+
+[저장 위치 바꾸기 ex) 바탕화면]
+바탕화면에서 우클릭 → Git Bash here 또는 PowerShell 열기
+아래 명령어 실행:
+git clone https://github.com/jeonghuny/mariadb_syntax.git
+
+
 
 [git log --graph] 명령어로 버전들 확인하기]
  

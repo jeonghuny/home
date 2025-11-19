@@ -59,6 +59,19 @@ sb.append(" ");
 sb.append("World");
 System.out.println(sb.toString());    ->   Hello World
 
+
+<참고>  
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+String str = br.readLine();
+String strArray[] = str.split(" ");
+int first = Integer.parseInt(strArray[0]);
+int second = Integer.parseInt(strArray[1]);
+int third = Integer.parseInt(strArray[2]);
+System.out.println(first + second + third);
+
+
+
+
 2. Scanner 활용
 Scanner in = new Scanner(System.in);
 int T = in.nextInt( );
