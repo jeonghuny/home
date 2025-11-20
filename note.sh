@@ -8,24 +8,29 @@
  ex) int[ ] scores = new int [3] ; // 길이(3) 지정해줘야 사용 할 수 있다.
 
 - 배열 길이 : 변수명.length
+- 배열 값 비교
+boolean result = Arrays.equals(arr1, arr2); // import java.util.Arrays; 
+ ex) int[] arr1 = {1,2,3};
+     int[] arr2 = {1,2,3};
+     boolean result = Arrays.equals(arr1, arr2); // true
 
 - 배열 오름차순 정렬 (import java.util.Arrays; ) 
  ex) int[] numbers; 
   // Arrays.sort(numbers);
 
 
-[Scanner 클래스]
+# Scanner 클래스
 1. 정수 입력 nextInt()
 2. 실수 입력 nextDouble() , nextFloat()
 3. 문자열 입력 next()  // 공백 전까지 한 단어 입력 
              nextLine() // 한 줄 전체 입력
 4. 문자 입력
    char c = sc.next().chatAt(0);
-
 5. nextInt 쓰고 엔터 쳤을때 다음 readLine() 또는 nextLine() 동작 안함
   -> 버퍼에 Enter 남아 있기 때문에 enter가 들어간다.
   int R = sc.nextInt();
   String str = sc.next();  // nextLine() 쓰지 말기
+
 
 [문자 char]
 # 문자열을 한 문자씩 쪼개서 배열로 저장
@@ -40,9 +45,21 @@ System.out.println(num); // 65
 
 
 [문자열]
-- 문자열 길이 : 변수명.length()
+# 문자열 길이 : 변수명.length()
 - charAt은 문자열(String)에서 특정 위치 문자 하나 
- ex) String str = "hello";    char c = str.charAt(1); // 문자열로 합치고 싶으면  “ ” + 붙인다
+  ex) String str = "hello";    char c = str.charAt(1); // 문자열로 합치고 싶으면  “ ” + 붙인다
+ int형과 char형은 산술연산 가능하다.
+ ex) char c = 'A' + 2; // 'C' (char형끼리도 산술연산 가능) 
+  Scanner sc = new Scanner(System.in);
+  String str = sc.next(); // 문자열로 입력 받음
+  int sum += str.charAt(0) - '0'; // '0' 빼줘야 int형으로 변환됨 
+ 
+# 문자열의 특정 인덱스 문자 하나를 가져오는 함수 charAt()
+ - char c = 문자열.charAt(인덱스);
+String str = "Hello";
+char c1 = str.charAt(0); // 'H'
+char c2 = str.charAt(4); // 'o'
+
 
 - 문자열을 정수로 변환 및 기본 타입으로 변환
  ex) "5678" -> int number = Integer.parseInt("5678");
@@ -65,10 +82,8 @@ ex) String str1 = "hello";
 
 # StringTokenizer 문자열을 특정 구분자로 잘라서 토큰 단위로 읽는 방법
 StringTokenizer는 문자열을 특정 구분자(delimiter) 로 잘라서 토큰(token) 단위로 읽음.
-
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 StringTokenizer st = new StringTokenizer(br.readLine()); // 한 줄 읽고 바로 토큰화
-
 String str = st.nextToken();
 
 # 반복문 형태
@@ -303,3 +318,17 @@ Snapshot
 
 
 
+
+
+# 알고리즘 공부
+
+1. 입력과 출력 자유자재로 다루기 연습 (ex. Scanner, BufferedReader, BufferedWriter, StringBuilder 등)
+2. 자료구조 (스택, 큐, 덱, 해시맵, 해시셋, 우선순위 큐 등) 공부
+3. 시간복잡도
+4. 정렬 알고리즘 (버블정렬, 선택정렬, 삽입정렬, 퀵정렬, 병합정렬 등)
+5. 탐색 알고리즘 (선형탐색, 이진탐색 등)
+6. 재귀함수
+7. 그리디 알고리즘
+8. 완전탐색 (백트래킹)
+9. 동적 계획법
+10. 그래프 이론 (DFS, BFS, 다익스트라, 플로이드-워셜 등)
