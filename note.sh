@@ -13,10 +13,31 @@
  ex) int[] numbers; 
   // Arrays.sort(numbers);
 
+
+[Scanner 클래스]
+1. 정수 입력 nextInt()
+2. 실수 입력 nextDouble() , nextFloat()
+3. 문자열 입력 next()  // 공백 전까지 한 단어 입력 
+             nextLine() // 한 줄 전체 입력
+4. 문자 입력
+   char c = sc.next().chatAt(0);
+
+5. nextInt 쓰고 엔터 쳤을때 다음 readLine() 또는 nextLine() 동작 안함
+  -> 버퍼에 Enter 남아 있기 때문에 enter가 들어간다.
+  int R = sc.nextInt();
+  String str = sc.next();  // nextLine() 쓰지 말기
+
 [문자 char]
-- 문자열을 한 문자씩 쪼개서 배열로 저장
+# 문자열을 한 문자씩 쪼개서 배열로 저장
  ex) String str1 = "hello";
      char[] chars = str1.toCharArray();
+
+# 아스키 코드 값 구하기
+ 자료형 char를 int 형으로 바꾸어주면 아스키 코드값이 나온다.
+char hey = 'A';
+int num = hey;
+System.out.println(num); // 65
+
 
 [문자열]
 - 문자열 길이 : 변수명.length()
@@ -41,8 +62,20 @@
 // 특정 문자 기준으로 자르고 싶다면 " " 또는 "," 등으로 지정
 ex) String str1 = "hello";
     String[] arr = str1.split("");
- - 문자열을 특정 구분자로 잘라서 토큰 단위로 읽는 방법
-StringTokenizer는 문자열을 특정 구분자(delimiter) 로 잘라서 토큰(token) 단위로 읽는다
+
+# StringTokenizer 문자열을 특정 구분자로 잘라서 토큰 단위로 읽는 방법
+StringTokenizer는 문자열을 특정 구분자(delimiter) 로 잘라서 토큰(token) 단위로 읽음.
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+StringTokenizer st = new StringTokenizer(br.readLine()); // 한 줄 읽고 바로 토큰화
+
+String str = st.nextToken();
+
+# 반복문 형태
+while (st.hasMoreTokens()) {
+    String token = st.nextToken();   // 다음 토큰 가져오기
+    System.out.println(token);       // 출력
+}
 
 # 기본형태
 StringTokenizer st = new StringTokenizer("A B C");
@@ -131,7 +164,7 @@ public class Main {
 1. 상속받아서 자식 자식 클래스 객체 생성하면 컴파일러에 의해 기본 부모 생성자도 호출됨. super();
 2. 메소드 재정의 : 자식 클래스에서 부모 클래스의 메소드를 다시 정의하는 것.
  - 부모 메소드를 호출하는 방법도 있다. super.부모메소드();
-3. final 클래스는 상속 불가. ex) String 클래스 // public fianl class String {...}
+3. final 클래스는 상속 불가. ex) String 클래스 // public final class String {...}
  - final 메소드는 재정의 불가. 최종적인 메소드가 된다.
 4. 다형성을 구현 : 메소드 재정의 + 타입 변환 // 다양한 객체를 만들기 위해
  - 자동 타입 변환 개념
