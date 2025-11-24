@@ -1,3 +1,43 @@
+[Set] : (집합) 중복 허용 X, 순서가 없다. 정렬 불가
+ Set<String> set = new HashSet<>();
+ - add() : 추가
+
+[List] : (리스트) 중복 허용 o, 순서가 있다. 정렬 가능하다
+ List<String> list = new ArrayList<>(set)
+
+# Collection.sort() 
+Collections.sort(list, (a, b) -> {   // (a,b) ->  : 두 값(a, b)을 비교하는 규칙을 담은 함수
+    if (a.length() != b.length())
+        return a.length() - b.length();
+    return a.compareTo(b);
+});
+
+# 풀어서 쓰면
+new Comparator<String>() {
+    @Override
+    public int compare(String a, String b) {
+        if (a.length() != b.length())
+            return a.length() - b.length();
+        return a.compareTo(b);
+    }
+}
+
+---------------------------------------------
+# Collections.sort(list, comparator)는 뭐냐?
+Collections → 유틸리티 클래스(정렬, 검색 같은 기능 제공)
+sort() → 이 안에 있는 정렬 함수
+list → 정렬할 대상
+comparator → "어떤 기준으로 정렬할 것인지" 알려주는 함수
+
+# (a,b) -> ...
+- 람다식(lambda)
+"두 값(a,b)을 비교해서 결과를 숫자로 반환하는 함수"
+
+# String.compareTo()
+
+
+
+
 [배열]
 - 배열 선언
  ex) int[] intArray; // int intArray[];
@@ -131,16 +171,6 @@ char c2 = str.charAt(4); // 'o'
 1) 단항, 이항, 삼항 순서 (단,이,삼)
 2) 산술, 비교, 논리, 대입 연산자 순서 (산,비,논,대)
 3) 단항, 부호, 대입 제외한 모든 연산 방향 (->)
-
-
-
-
-
-
-
-
-
-
 
 
 
