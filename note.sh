@@ -35,7 +35,29 @@ comparator → "어떤 기준으로 정렬할 것인지" 알려주는 함수
 
 # String.compareTo()
 
+[Map]
+HashMap<Integer, Integer> map = new HashMap<>();
+# 메소드
+map.put(key, value);
 
+map.getOrDefault(key, defaultValue);
+key → 찾고 싶은 키
+defaultValue → key가 없을 때 대신 반환할 값
+
+# 값 넣기
+map.put(num, map.getOrDefault(num, 0) + 1);
+- num이라는 숫자가 이미 있으면 그 값 +1
+- 없으면 기본값 0에서 +1
+# 값 확인
+int count = map.getOrDefault(num, 0);
+- 해당 숫자 있으면 그 개수
+- 없으면 0
+# 존재 여부 확인
+map.containskey(num);
+# 전체 출력
+for(Integer key : map.keySet()){
+    System.out.println(key + " : " + map.get(key));
+}
 
 
 [배열]
