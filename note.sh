@@ -1,6 +1,7 @@
 [Set] : (집합) 중복 허용 X, 순서가 없다. 정렬 불가
  Set<String> set = new HashSet<>();
  - add() : 추가
+ - set.contains(3) : set안에 특정 값이 들어가 있는지 검사 // false 
 
 [List] : (리스트) 중복 허용 o, 순서가 있다. 정렬 가능하다
  List<String> list = new ArrayList<>(set)
@@ -29,9 +30,26 @@ sort() → 이 안에 있는 정렬 함수
 list → 정렬할 대상
 comparator → "어떤 기준으로 정렬할 것인지" 알려주는 함수
 
-# (a,b) -> ...
+# Arrays.sort(배열, 비교방법)
+- 정렬 기준을 직접 만드는 문법
+Arrays.sort(idx, (a, b) -> {
+    if (ages[a] != ages[b]) return ages[a] - ages[b];
+    return a - b;
+});
+
+# (a,b) -> { ... }
 - 람다식(lambda)
 "두 값(a,b)을 비교해서 결과를 숫자로 반환하는 함수"
+"a와 b를 이렇게 비교해서 정렬해라" 라는 문법.
+람다식(lambda)이라서 이렇게 생긴 거야.
+정렬할 때 두 요소 a, b를 어떻게 비교할지 알려주는 함수
+즉, 자바는 이렇게 묻는 거야:
+“idx 배열 안에서 어떤 두 숫자 a와 b가 있으면
+누가 먼저 오게 할까? 비교 기준을 알려줘!”
+우리는 이렇게 대답하는 거고:
+a의 나이가 더 작으면 → a 먼저
+b의 나이가 더 작으면 → b 먼저
+나이가 같으면 → 입력 순서 비교 (a < b)
 
 # String.compareTo()
 
