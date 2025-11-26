@@ -61,6 +61,7 @@ map.put(key, value);
 map.getOrDefault(key, defaultValue);
 key → 찾고 싶은 키
 defaultValue → key가 없을 때 대신 반환할 값
+key가 있으면 그 값 반환, 없으면 defaultValue 반환
 
 # 값 넣기
 map.put(num, map.getOrDefault(num, 0) + 1);

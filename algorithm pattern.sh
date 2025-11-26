@@ -63,3 +63,23 @@ for (int i = 1; i <= K; i++) {
     result *= (N - i + 1);
     result /= i;
 } 
+
+# 문자열이 숫자인지 확인 1
+public static boolean isNumeric(String str) {
+    for (int i = 0; i < str.length(); i++) {
+        if (!Character.isDigit(str.charAt(i))) {
+            return false;
+        }
+    }
+    return true;
+}
+
+# 문자열이 숫자로만 구성된지 확인 2
+public static boolean isNumeric(String str) {
+    return str.matches("\\d+");
+}
+
+# 문자열이 숫자 포함되는지 확인 3
+int num = 5;
+String.valuOf(num).contains("5"); // num에 5가 포함되는지 확인 // true
+
