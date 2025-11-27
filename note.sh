@@ -1,8 +1,13 @@
 [ArrayQueue]
 Queue<Integer> queue = new ArrayDeque<>();
- - offer() : 추가
- - poll() : 맨 앞 요소 꺼내기 + 제거
- - peek() : 맨 앞 요소 확인 (제거 X)
+메소드
+ - add() : 큐 맨 뒤에 추가 // 공간 부족하면 예외
+ - offer() : 큐 맨 뒤에 추가 // 공간 부족하면 false 반환
+ - remove() : 큐 맨 앞에서 제거 + 반환 // 비어있으면 예외
+ - poll() : 맨 앞 요소 꺼내기 + 제거 // 비어있으면 null 반환
+ - peek() : 큐 맨 앞에서 확인 (제거 X) // 비어있으면 null 반환
+ - size() : 큐에 들어있는 요소 개수 반환
+ - poll() : 맨 앞 요소 꺼내기 + 제거 // 비어있으면 null 반환
  - isEmpty() : 비어있는지 확인 // true
 
 q.offer(10);
@@ -11,11 +16,34 @@ int x = q.poll();  // 10 나옴
 int y = q.peek();  // 20
 q.size(); // 1
 
+# Deque 큐와 스택 둘 다 가능
+Deque<Integer> queue = new ArrayDeque<>();
+[큐]의 양쪽 끝에서 삽입과 삭제가 모두 가능한 자료구조
+메소드
+ - addFirst() : 앞에 추가
+ - addLast() : 뒤에 추가
+ - removeFirst() : 앞에서 제거 + 반환
+ - removeLast() : 뒤에서 제거 + 반환
+ - peekFirst() : 앞에서 확인 (제거 X)
+ - peekLast() : 뒤에서 확인 (제거 X)
+ - isEmpty() : 비어있는지 확인 // true
+
+Deque<Integer> stack = new ArrayDeque<>();
+[스택]의 양쪽 끝에서 삽입과 삭제가 모두 가능한 자료구조
+메소드
+ - push() : 스택 맨 위에 추가
+ - pop() : 스택 맨 위에서 제거 + 반환
+ - peek() : 스택 맨 위에서 확인 (제거 X)
+ - isEmpty() : 비어있는지 확인 // true
 
 [Set] : (집합) 중복 허용 X, 순서가 없다. 정렬 불가
  Set<String> set = new HashSet<>();
- - add() : 추가
- - set.contains(3) : set안에 특정 값이 들어가 있는지 검사 // false 
+# 메소드
+    set.add("apple");   // 추가
+    set.remove("apple"); // 제거
+    boolean exists = set.contains("apple"); // 포함여부 확인
+    - set.contains(3) : set안에 특정 값이 들어가 있는지 검사 // false 
+
 
 [List] : (리스트) 중복 허용 o, 순서가 있다. 정렬 가능하다
  List<String> list = new ArrayList<>(set)
