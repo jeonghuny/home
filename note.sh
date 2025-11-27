@@ -1,3 +1,17 @@
+[ArrayQueue]
+Queue<Integer> queue = new ArrayDeque<>();
+ - offer() : 추가
+ - poll() : 맨 앞 요소 꺼내기 + 제거
+ - peek() : 맨 앞 요소 확인 (제거 X)
+ - isEmpty() : 비어있는지 확인 // true
+
+q.offer(10);
+q.offer(20);
+int x = q.poll();  // 10 나옴
+int y = q.peek();  // 20
+q.size(); // 1
+
+
 [Set] : (집합) 중복 허용 X, 순서가 없다. 정렬 불가
  Set<String> set = new HashSet<>();
  - add() : 추가
@@ -114,6 +128,21 @@ boolean result = Arrays.equals(arr1, arr2); // import java.util.Arrays;
 
 
 [문자 char]
+
+# 문자열 안에 부분 문자열이 포함되는지 확인
+ ex) String str1 = "hello";
+     boolean result = str1.contains("he"); // true
+# 문자열 안에 숫자가 포함되는지 확인
+ ex) String str1 = "hello123";
+     boolean hasDigit = str1.matches(".*\\d.*"); // true
+     String.valueOf(num).contains("5"); // num에 5가 포함되는지 확인 // true
+# 특정 문자열 포함되는지 확인
+ ex) str1.contains(str2);  // str1에 str2가 있는지 // true/false 반환
+# 문자열이 특정 문자로 시작하는지 확인
+ ex) String str1 = "hello";
+     boolean result = str1.startsWith("he"); // true
+
+
 # 문자열을 한 문자씩 쪼개서 배열로 저장
  ex) String str1 = "hello";
      char[] chars = str1.toCharArray();
@@ -150,10 +179,7 @@ char c2 = str.charAt(4); // 'o'
  ex) String str = String.valueOf(기본타입값);
 
 - 문자열 (내부 문자열) 비교 
- ex) boolean result = str1.equals(str2);
- 
-- 특정 문자열 포함되는지 확인
- ex) str1.contains(str2);  // str1에 str2가 있는지 
+ ex) boolean result = str1.equals(str2); 
 
 # 문자열을 한 글자씩 쪼개서 배열로 저장
 // split("")은 빈 문자열 기준으로 자른다는 의미
