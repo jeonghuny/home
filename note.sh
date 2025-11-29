@@ -1,5 +1,12 @@
 [ArrayQueue]
-Queue<Integer> queue = new ArrayDeque<>();
+Queue<Integer> queue = new ArrayDeque<>();  // <현대는 이걸 많이 씀
+Queue<Integer> q = new LinkedList<>();
+두 줄의 가장 중요한 핵심은 "인터페이스는 Queue로 통일하고, 실제 구현체만 다르게 선택한 것"
+앞의 Queue<Integer> q → 인터페이스(약속, 규칙)
+뒤에 오는 new ArrayDeque() 또는 new LinkedList()는 실제 구현체(진짜 객체)
+앞: 어떤 기능을 사용할지 (큐 기능만 쓰겠다)
+뒤: 내부에 어떤 자료구조로 구현할지 선택
+
 메소드
  - add() : 큐 맨 뒤에 추가 // 공간 부족하면 예외
  - offer() : 큐 맨 뒤에 추가 // 공간 부족하면 false 반환
