@@ -1,3 +1,19 @@
+자바에서
+public static void main(String[] args)
+
+main은 프로그램 시작 지점이고,
+JVM이 객체를 만들지 않고 바로 호출한다.
+즉, 객체(new Main())를 만들기 전
+클래스 레벨에서 바로 실행되는 함수
+그래서 static 메서드 안에서 사용하는 변수나 메서드도
+객체에 속하지 않고 클래스에 속한(static) 변수여야 한다.
+
+이 변수들이 static인 이유는:
+dfs()도 static이어서
+main()도 static이어서
+같은 클래스 레벨에서 공유해야 하기 때문이다.
+즉, 객체 생성 없이 바로 접근할 수 있도록 하기 위해서다.
+
 [ArrayQueue]
 Queue<Integer> queue = new ArrayDeque<>();  // <현대는 이걸 많이 씀
 Queue<Integer> q = new LinkedList<>();
@@ -104,8 +120,17 @@ b의 나이가 더 작으면 → b 먼저
 
 [Map]
 HashMap<Integer, Integer> map = new HashMap<>();
-# 메소드
-map.put(key, value);
+# Map 메소드        
+- put(K key, V value) // 값 넣기 (키가 이미 있으면 덮어씀)
+ ex) map.put("apple", 3);
+- get(Object key) // 키로 값 가져오기 (없으면 null)
+ ex) map.get("apple"); // 3
+- containsKey(Object key) // 키 존재 여부 확인 (true/false)
+ ex) map.containsKey("apple"); // true
+- remove(Object key) // 키로 값 제거
+ ex) map.remove("apple"); // apple 키 제거
+- size() // 맵에 들어있는 키-값 쌍 개수 반환    
+ ex) map.size(); // 0
 
 map.getOrDefault(key, defaultValue);
 key → 찾고 싶은 키
@@ -120,8 +145,7 @@ map.put(num, map.getOrDefault(num, 0) + 1);
 int count = map.getOrDefault(num, 0);
 - 해당 숫자 있으면 그 개수
 - 없으면 0
-# 존재 여부 확인
-map.containskey(num);
+
 # 전체 출력
 for(Integer key : map.keySet()){
     System.out.println(key + " : " + map.get(key));
@@ -170,7 +194,20 @@ boolean result = Arrays.equals(arr1, arr2); // import java.util.Arrays;
 # 문자열 안에 숫자가 포함되는지 확인
  ex) String str1 = "hello123";
      boolean hasDigit = str1.matches(".*\\d.*"); // true
-     String.valueOf(num).contains("5"); // num에 5가 포함되는지 확인 // true
+.* → 아무 문자든 0개 이상
+\\d → 숫자(0~9)
+.*\\d.* → 문자열 어딘가에 숫자가 포함되어 있으면 true
+ -> 정규식은 느리므로 자주 쓰지 말 것
+
+# 문자열이 숫자로 시작되는지 확인
+ String str = "5hello";
+ Character.isDigit(str.charAt(0)) // q가 숫자로 시작하는지 확인 // true
+# 문자열이 숫자로 끝나는지 확인 
+ Character.isDigit(str.charAt(str.length() - 1)) // q가 숫자로 끝나는지 확인 // true
+
+# 문자열에 특정 숫자가 포함되는지 확인
+ int num = 5;
+ String.valueOf(num).contains("5"); // num에 5가 포함되는지 확인 // true
 # 특정 문자열 포함되는지 확인
  ex) str1.contains(str2);  // str1에 str2가 있는지 // true/false 반환
 # 문자열이 특정 문자로 시작하는지 확인
