@@ -1,16 +1,13 @@
-자바에서
-public static void main(String[] args)
 
+
+자바에서  public static void main(String[] args)
 main은 프로그램 시작 지점이고,
 JVM이 객체를 만들지 않고 바로 호출한다.
-즉, 객체(new Main())를 만들기 전
-클래스 레벨에서 바로 실행되는 함수
+즉, 객체(new Main())를 만들기 전 클래스 레벨에서 바로 실행되는 함수이다.
 그래서 static 메서드 안에서 사용하는 변수나 메서드도
 객체에 속하지 않고 클래스에 속한(static) 변수여야 한다.
-
 이 변수들이 static인 이유는:
-dfs()도 static이어서
-main()도 static이어서
+dfs()도 static이고, main()도 static이어서
 같은 클래스 레벨에서 공유해야 하기 때문이다.
 즉, 객체 생성 없이 바로 접근할 수 있도록 하기 위해서다.
 
