@@ -7,6 +7,9 @@ for (자료형 변수명 : 배열_또는_컬렉션) {
 반복문 안에서는 꺼낸 값(변수명)으로 작업 가능
 
 [우선순위 큐]
+# 우선순위 큐를 구현하는 방식 중 하나가 힙이다. (다른 방식으로도 구현할 수 있지만 힙이 가장 효율적)
+- 배열 기반의 최소 힙(min-heap)으로 구현되어 있다.
+
 PriorityQueue<Integer> pq = new PriorityQueue<>(); 최소 힙
 pq = new PriorityQueue<>(Collections.reverseOrder()); 큰 값 우선
 - 삽입	          pq.offer(x)	 log N
@@ -24,6 +27,11 @@ pq = new PriorityQueue<>(Collections.reverseOrder()); 큰 값 우선
 - 하지만 형제끼리는 순서가 상관없다
 - 왼쪽 자식이 오른쪽 자식보다 클 수도 있다
 - 전체적으로 정렬된 구조가 아니다
+
+# 힙(Heap)
+ : 완전 이진 트리(complete binary tree)를 기반
+✔ 최소 힙(min-heap) - 부모 ≤ 자식, 가장 작은 값이 루트(root)에 존재
+✔ 최대 힙(max-heap) - 부모 ≥ 자식, 가장 큰 값이 루트에 존재
 
 [Stack]
 Stack<Character> stack = new Stack<>();
