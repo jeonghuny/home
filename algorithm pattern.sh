@@ -1,3 +1,9 @@
+# DFS 스택으로 구현
+
+# BFS 큐로 구현
+// LinkedList 클래스가 Queue 인터페이스 구현체 중 하나임
+Queue<Integer> q = new LinkedList<>();
+
 # 소수 판별 함수
     public static boolean isPrime(int n){
         if(n < 2) return false;

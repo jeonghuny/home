@@ -1,3 +1,35 @@
+[향상된 for문]
+for (자료형 변수명 : 배열_또는_컬렉션) {
+    // 반복할 코드
+}
+자료형 변수명 → 반복하면서 꺼낸 값이 들어갈 변수
+배열_또는_컬렉션 → 반복할 대상 (배열, ArrayList 등) 
+반복문 안에서는 꺼낸 값(변수명)으로 작업 가능
+
+[우선순위 큐]
+PriorityQueue<Integer> pq = new PriorityQueue<>(); 최소 힙
+pq = new PriorityQueue<>(Collections.reverseOrder()); 큰 값 우선
+- 삽입	          pq.offer(x)	 log N
+- 최소값 제거      pq.poll()	  log N
+- 최소값 확인	   pq.peek()	   O(1)
+- 비었는지 확인	   pq.isEmpty()	   O(1)
+
+# 트리 구조
+- 완전 이진 트리(Complete Binary Tree)
+- 왼쪽부터 가득 채우는 형태
+- 높이가 최소가 되는 구조
+
+# 정렬 규칙
+- 각 노드는 부모보다 크거나 같아야 한다 (Min-Heap)
+- 하지만 형제끼리는 순서가 상관없다
+- 왼쪽 자식이 오른쪽 자식보다 클 수도 있다
+- 전체적으로 정렬된 구조가 아니다
+
+[Stack]
+Stack<Character> stack = new Stack<>();
+stack.push(c);
+stack.pop();
+
 [ArrayQueue]
 Queue<Integer> queue = new ArrayDeque<>();
 메소드
@@ -7,7 +39,6 @@ Queue<Integer> queue = new ArrayDeque<>();
  - poll() : 맨 앞 요소 꺼내기 + 제거 // 비어있으면 null 반환
  - peek() : 큐 맨 앞에서 확인 (제거 X) // 비어있으면 null 반환
  - size() : 큐에 들어있는 요소 개수 반환
- - poll() : 맨 앞 요소 꺼내기 + 제거 // 비어있으면 null 반환
  - isEmpty() : 비어있는지 확인 // true
 
 q.offer(10);
@@ -99,7 +130,9 @@ b의 나이가 더 작으면 → b 먼저
 HashMap<Integer, Integer> map = new HashMap<>();
 # 메소드
 map.put(key, value);
-
+ : 값 넣기 
+map.get("banana");
+ : key가 "banana"인 value 찾아서 출력
 map.getOrDefault(key, defaultValue);
 key → 찾고 싶은 키
 defaultValue → key가 없을 때 대신 반환할 값
@@ -170,10 +203,14 @@ boolean result = Arrays.equals(arr1, arr2); // import java.util.Arrays;
  ex) String str1 = "hello";
      boolean result = str1.startsWith("he"); // true
 
-
 # 문자열을 한 문자씩 쪼개서 배열로 저장
  ex) String str1 = "hello";
      char[] chars = str1.toCharArray();
+# 문자열을 한 글자씩 쪼개는 법
+ ex) String s = br.readLine();
+ for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+ }
 
 # 아스키 코드 값 구하기
  자료형 char를 int 형으로 바꾸어주면 아스키 코드값이 나온다.
