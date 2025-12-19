@@ -1,3 +1,9 @@
+# DFS 스택으로 구현
+
+# BFS 큐로 구현
+// LinkedList 클래스가 Queue 인터페이스 구현체 중 하나임
+Queue<Integer> q = new LinkedList<>();
+
 # 소수 판별 함수
     public static boolean isPrime(int n){
         if(n < 2) return false;
@@ -82,51 +88,3 @@ public static boolean isNumeric(String str) {
 # 문자열이 숫자 포함되는지 확인 3
 int num = 5;
 String.valuOf(num).contains("5"); // num에 5가 포함되는지 확인 // true
-
-# DFS 재귀 함수 패턴
-public static void dfs(int level, int targetLevel){
-    // 종료 조건
-    if(level == targetLevel){
-        // 작업 수행
-        return;
-    }
-    
-    // 재귀 호출
-    dfs(level + 1, targetLevel);
-}  
-
-# BFS 큐 패턴
-import java.util.LinkedList;   
-import java.util.Queue;
-Queue<Node> queue = new LinkedList<>();
-// 시작 노드를 큐에 삽입
-queue.offer(startNode);
-while(!queue.isEmpty()){
-    // 큐에서 노드를 꺼냄
-    Node currentNode = queue.poll();
-    
-    // 작업 수행
-    
-    // 인접한 노드들을 큐에 삽입
-    for(Node neighbor : currentNode.getNeighbors()){
-        queue.offer(neighbor);
-    }
-}
-
-# 최빈값 찾기
-import java.util.HashMap;
-public static int findMode(int[] arr){
-    HashMap<Integer, Integer> frequencyMap = new HashMap<>();
-    for(int num : arr){
-        frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
-    }
-    int mode = arr[0];
-    int maxCount = 0;
-    for(Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()){
-        if(entry.getValue() > maxCount){
-            maxCount = entry.getValue();
-            mode = entry.getKey();
-        }
-    }
-    return mode;
-}
